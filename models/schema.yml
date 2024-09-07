@@ -6,5 +6,11 @@ sources:
     schema: gz_raw_data
     tables:
       - name: raw_gz_sales
+        columns:
+          - name: date_date, orders_id, pdt_id, revenue, quantity
       - name: raw_gz_product
+        columns:
+          - name: products_id, purchSE_PRICE
       - name: raw_gz_ship
+        columns:
+          - name: orders_id, shipping_fee, shipping_fee_1, logCost, ship_cost
