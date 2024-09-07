@@ -6,11 +6,37 @@ sources:
     schema: gz_raw_data
     tables:
       - name: raw_gz_sales
+        identifier: raw_gz_sales
+        description: "Sales of Greenweez / we have one row per product_id found in each orders_id"
+
+        # Freshness testing
+        loaded_at_field: "date_date" # The column containing the timestamp of the data
+        freshness:
+          warn_after:
+            count: 90
+            period: day
+
         columns:
-          - name: date_date, orders_id, pdt_id, revenue, quantity
+          - name: date_date
+            description: "Date of purchase"
+          - name: orders_id
+          - name: pdt_id
+          - name: revenue
+          - name: quantity
+
       - name: raw_gz_product
+        identifier: raw_gz_product
+        description: "Products of Greenweez"
         columns:
-          - name: products_id, purchSE_PRICE
+          - name: products_id
+          - name: purchase_price # Corrected typo from 'purchse_price'
+
       - name: raw_gz_ship
+        identifier: raw_gz_ship
+        description: "Shipment info of Greenweez"
         columns:
-          - name: orders_id, shipping_fee, shipping_fee_1, logCost, ship_cost
+          - name: orders_id
+          - name: shipping_fee
+          - name: shipping_fee_1
+          - name: logcost
+          - name: ship_cost
