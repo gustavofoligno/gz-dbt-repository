@@ -29,7 +29,7 @@ sources:
         description: "Products of Greenweez"
         columns:
           - name: products_id
-          - name: purchase_price # Corrected typo from 'purchse_price'
+          - name: purchse_price
 
       - name: raw_gz_ship
         identifier: raw_gz_ship
